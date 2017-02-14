@@ -1,0 +1,35 @@
+﻿github操作
+从本地上传
+1.创建本地仓库
+git init
+git remote add repositeName git@github.com :yourName/yourRepo.git
+2.从本地上传文件
+git add fileName
+3.提交描述
+git commint -m “描述内容”
+4.如果是新建立的仓库,则需要先从远程端获取更新
+git fetch repoName
+git merge localRepo/master
+5.提交
+git push localRepo master
+
+从远程下载
+1.先从网页端仓库内右上角，复制url地址
+2.进入要放文件的目录，使用命令
+git clone url地址
+3.如果本地不是最新，可以 git fetch localRepo
+4.把更新的内容手动合并到本地分支
+git merge localRepo/master
+如果你不想手动去合并，那么你可以使用： git pull origin master // 这个命令可以拉去最新版本并自动合并
+
+建立分支
+创建
+     1 创建一个本地分支： git branch <新分支名字>
+     2 将本地分支同步到GitHub上面： git push <本地仓库名> <新分支名>
+     3 切换到新建立的分支： git checkout <新分支名>
+     4 为你的分支加入一个新的远程端： git remote add <远程端名字> <地址>
+     5 查看当前仓库有几个分支: git branch
+     删除
+     1 从本地删除一个分支： git branch -d <分支名称>
+     2 同步到GitHub上面删除这个分支： git push <本地仓库名> :<GitHub端分支>
+
